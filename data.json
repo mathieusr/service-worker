@@ -1,0 +1,34 @@
+{
+  "todos": [
+    {
+      "id": 3,
+      "content": "Todo 3",
+      "isSync": true,
+      "done": false
+    },
+    {
+      "id": "171f6db3feb",
+      "content": {},
+      "done": false,
+      "isSync": true
+    },
+    {
+      "id": "171f6dcd821",
+      "content": "test",
+      "done": false,
+      "isSync": true
+    },
+    {
+      "id": "171f6dd1b19",
+      "content": "test2",
+      "done": true,
+      "isSync": true
+    },
+    {
+      "id": "171f6e32dd7",
+      "content": "dfff",
+      "done": true,
+      "isSync": true
+    }
+  ]
+}
