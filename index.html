@@ -8,5 +8,10 @@
 <body>
     <div id="root"></div>
     <script type="module" src="/js/main.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('serviceworker.js');
+        }
+    </script>
 </body>
 </html>

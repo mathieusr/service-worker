@@ -1,33 +1,27 @@
 {
   "todos": [
     {
-      "id": 3,
-      "content": "Todo 3",
-      "isSync": true,
-      "done": false
-    },
-    {
-      "id": "171f6db3feb",
-      "content": {},
-      "done": false,
-      "isSync": true
-    },
-    {
       "id": "171f6dcd821",
       "content": "test",
-      "done": false,
+      "done": true,
       "isSync": true
     },
     {
-      "id": "171f6dd1b19",
+      "id": "171f6ff25f3",
       "content": "test2",
       "done": true,
       "isSync": true
     },
     {
-      "id": "171f6e32dd7",
-      "content": "dfff",
-      "done": true,
+      "id": "f84d6695-2883-4033-8fdb-898f8dedb404",
+      "content": "cccc",
+      "done": false,
+      "isSync": true
+    },
+    {
+      "id": "6380b7c5-1570-44c0-a2a5-54cf67611068",
+      "content": "cccccfdfsd",
+      "done": false,
       "isSync": true
     }
   ]

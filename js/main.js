@@ -28,7 +28,7 @@ async function displayList() {
     const todoName = form.querySelector("#todoContent");
     const elementDisplay = element.querySelector("#element");
 
-    refreshTodos(elementDisplay);
+    refreshTodos(elementDisplay, true);
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -62,8 +62,10 @@ function displayTodos(outlet, todos) {
     }
 }
 
-async function refreshTodos(outlet) {
+async function refreshTodos(outlet, completeRefresh = false) {
     const todos = await Service.getTodos();
+    if(completeRefresh)
+        await Service.refreshMemoryDb(todos);
     displayTodos(outlet, todos);
 }
 
@@ -71,20 +73,20 @@ function TodoElement(outlet, data) {
     const constructor = document.createElement('li');
     constructor.innerHTML = `
         <div>${data.content}</div>
-        <input type="checkbox" ${data.done ? 'checked' : ''}>
+        <input type="checkbox" ${data.done ? 'checked' : ''} id="state">
         <label for="done-${data.id}">Done</label>
         <div>
-            <button name="deleteElement"> 
+            <button name="deleteElement" id="delete"> 
                 x 
             </button>
         </div>`
-    const checkbox = constructor.querySelector('input[type=checkbox]');
+    const checkbox = constructor.querySelector('#state');
     checkbox.addEventListener('change', async(e) => {
       const state = e.target.checked;
-      await Service.changeDoneState(data, state)
+      await Service.updateState(data, state)
     })
   
-    const deleteButton = constructor.querySelector('button[name=deleteElement]');
+    const deleteButton = constructor.querySelector('#delete');
     deleteButton.addEventListener('click', async (e) => {
       await Service.removeTodo(data.id)
       const removeEvent = new CustomEvent('remove');
